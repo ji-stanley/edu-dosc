@@ -226,7 +226,7 @@ if __name__ == '__main__':
 </pre>
 
 ##Python打印列表
-<pre>	
+```	
 #!/usr/bin/python
 import xmlrpclib
 server = xmlrpclib.Server("http://192.168.56.12/cobbler_api")
@@ -235,7 +235,7 @@ print server.get_profiles()
 print server.get_systems()
 print server.get_images()
 print server.get_repos()
-</pre>
+```
 * 执行结果
 ```
 python cobbler_list.py 
