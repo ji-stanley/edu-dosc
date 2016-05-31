@@ -86,7 +86,7 @@ cobbler repo add --name=openstack-mitaka --mirror=http://mirrors.aliyun.com/cent
 cobbler reposync 
 </pre>
 * 修改ks配置文件
-<pre>
+`
 cd /var/lib/cobbler/kickstarts/
 vim  CentOS-7-x86_64.cfg
 ----------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ $yum_config_stanza
 %end
 ---------------------------------------------------------------------------------
 cobbler list
-</pre>
+`
 
 * 查看镜像
 <pre>
@@ -237,7 +237,7 @@ print server.get_images()
 print server.get_repos()
 </pre>
 * 执行结果
-<pre>
+`
 python cobbler_list.py 
      
 [{'comment': '', 'kernel': '/var/www/cobbler/ks_mirror/CentOS-7-x86_64/images/pxeboot/vmlinuz', 'uid': 'MTQ2NDcxOTYxMi40ODY3NTM1ODUuMzUwOA', 'kernel_options_post': {}, 'redhat_management_key': '<<inherit>>', 'kernel_options': {}, 'redhat_management_server': '<<inherit>>', 'initrd': '/var/www/cobbler/ks_mirror/CentOS-7-x86_64/images/pxeboot/initrd.img', 'mtime': 1464719612.957186, 'template_files': {}, 'ks_meta': {'tree': 'http://@@http_server@@/cblr/links/CentOS-7-x86_64'}, 'boot_files': {}, 'breed': 'redhat', 'os_version': 'rhel7', 'mgmt_classes': [], 'fetchable_files': {}, 'tree_build_time': 0, 'arch': 'x86_64', 'name': 'CentOS-7-x86_64', 'owners': ['admin'], 'ctime': 1464719612.480652, 'source_repos': [['http://@@http_server@@/cobbler/ks_mirror/config/CentOS-7-x86_64-0.repo', 'http://@@http_server@@/cobbler/ks_mirror/CentOS-7-x86_64']], 'depth': 0}]
@@ -245,6 +245,6 @@ python cobbler_list.py
 []
 []
 [{'comment': '', 'priority': 99, 'apt_dists': '', 'ctime': 1464719456.416682, 'parent': '', 'yumopts': {}, 'apt_components': '', 'breed': 'yum', 'createrepo_flags': '<<inherit>>', 'owners': ['admin'], 'mirror_locally': True, 'environment': {}, 'depth': 2, 'proxy': '', 'mtime': 1464719456.416682, 'uid': 'MTQ2NDcxOTQ1Ni40Mjk4MjE0NDkuMzE1OTE', 'keep_updated': True, 'arch': 'x86_64', 'mirror': 'http://mirrors.aliyun.com/centos/7.2.1511/cloud/x86_64/openstack-mitaka/', 'rpm_list': [], 'name': 'openstack-mitaka'}]
-</pre>
+`
 
 
