@@ -63,23 +63,24 @@ htpasswd -c /usr/local/smokeping/htdocs/htpasswd  smokeping
 <pre>
 vim /etc/httpd/conf/httpd.conf 
 </pre>
-> 在此行下增加如下```DocumentRoot "/var/www/html"```
-
-	Alias /cache "/usr/local/smokeping/cache/"
-	Alias /cropper "/usr/local/smokeping/htdocs/cropper/"
-	Alias /smokeping "/usr/local/smokeping/htdocs/smokeping.fcgi"
-	<Directory "/usr/local/smokeping">
-	AllowOverride None
-	Options All
-	AddHandler cgi-script .fcgi .cgi
-	Order allow,deny
-	Allow from all
-	AuthName "smokeping"
-	AuthType Basic
-	AuthUserFile /usr/local/smokeping/htdocs/htpasswd
-	Require valid-user
-	DirectoryIndex smokeping.fcgi
-	</Directory>
+* 在此行下增加如下```DocumentRoot "/var/www/html"```
+```
+Alias /cache "/usr/local/smokeping/cache/"
+Alias /cropper "/usr/local/smokeping/htdocs/cropper/"
+Alias /smokeping "/usr/local/smokeping/htdocs/smokeping.fcgi"
+<Directory "/usr/local/smokeping">
+AllowOverride None
+Options All
+AddHandler cgi-script .fcgi .cgi
+Order allow,deny
+Allow from all
+AuthName "smokeping"
+AuthType Basic
+AuthUserFile /usr/local/smokeping/htdocs/htpasswd
+Require valid-user
+DirectoryIndex smokeping.fcgi
+</Directory>
+```
 > 重启Apache
 <pre>
 /etc/init.d/httpd restart
@@ -115,7 +116,7 @@ sed -i 's/SmokeAlert/XX Smoke 报警/' /usr/local/smokeping/lib/Smokeping.pm
 
 
 ##报错
-###打开web界面报错
+###打开web界面报错###
 <pre>
 Software error:
 Version mismatch between Carp 1.11 (/usr/share/perl5/Carp.pm) and Carp::Heavy 1.38 (/usr/local/smokeping/bin/../thirdparty/lib/perl5/Carp/Heavy.pm).  Did you alter @INC after Carp was loaded?
@@ -132,7 +133,8 @@ For help, please send mail to the webmaster (root@localhost), giving this error 
 \cp /usr/share/perl5/Carp.pm /usr/local/smokeping/bin/../thirdparty/lib/perl5/Carp/Heavy.pm
 \cp /usr/share/perl5/Carp.pm /usr/local/smokeping/bin/../thirdparty/lib/perl5/Carp/Heavy.pm
 </pre>
-###启动报错
+
+###启动报错###
 <pre>
 Error: RRD parameter mismatch ('Wrong value of step: /usr/local/smokeping/data/Test/James.rrd has 60, create string has 300'). You must delete /usr/local/smokeping/data/Test/James.rrd or fix the configuration parameters.
 </pre>
@@ -140,6 +142,7 @@ Error: RRD parameter mismatch ('Wrong value of step: /usr/local/smokeping/data/T
 <pre>
 rm /usr/local/smokeping/data/Test/* -f
 </pre>
+
 ###启动报错
 <pre>
 ERROR: /usr/local/smokeping/bin/../etc/config, line 112: File '/usr/local/smokeping/etc/smokeping_secrets.dist' is world-readable or writable, refusing it
