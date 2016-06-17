@@ -90,7 +90,9 @@ DirectoryIndex smokeping.fcgi
 /usr/local/smokeping/bin/smokeping
 </pre>
 * web界面访问
-> 192.168.1.5/smokeping
+<pre>
+192.168.1.5/smokeping
+</pre>
 ##汉化
 <pre>
 sed -i 's/The most interesting destinations/XX科技网络PING监控平台/' /usr/local/smokeping/etc/config
