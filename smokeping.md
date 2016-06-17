@@ -81,7 +81,7 @@ Require valid-user
 DirectoryIndex smokeping.fcgi
 </Directory>
 ```
-> 重启Apache
+* 重启Apache
 <pre>
 /etc/init.d/httpd restart
 </pre>
