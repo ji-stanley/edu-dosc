@@ -63,7 +63,7 @@ htpasswd -c /usr/local/smokeping/htdocs/htpasswd  smokeping
 <pre>
 vim /etc/httpd/conf/httpd.conf 
 </pre>
-* 在此行下增加如下```DocumentRoot "/var/www/html"```
+* 在此行下```DocumentRoot "/var/www/html"```增加如下
 ```
 Alias /cache "/usr/local/smokeping/cache/"
 Alias /cropper "/usr/local/smokeping/htdocs/cropper/"
